@@ -1,7 +1,16 @@
+import memeData from "./memeData"
+
 function Meme(){
+        
+    function getRandomMeme(){
+            const randomNumber= Math.floor(Math.random()* memeData.length)
+            const photo= memeData[randomNumber].photo
+            console.log(photo)
+        }
+    
     return(
         <main>
-        <form className="meme__form">
+        <div className="meme__form">
              <input 
              type="text" 
              className="input-txt"
@@ -14,8 +23,8 @@ function Meme(){
              placeholder="Bottom Text"
              />
 
-             <button className="meme__btn">Get a new meme image</button>
-        </form>
+             <button onClick={getRandomMeme} className="meme__btn">Get a new meme image</button>
+        </div>
         </main>
     )
 }
