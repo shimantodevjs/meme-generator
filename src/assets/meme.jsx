@@ -28,12 +28,10 @@ function Meme(){
              />
 
              <button onClick={getRandomMeme} className="meme__btn">Get a new meme image</button>
-
-              <div className="meme__img">
+        </div>
+        <div className="meme__img">
                    <img src={memeImage} alt="" />
               </div>
-        </div>
-        
         </main>
     )
 }
