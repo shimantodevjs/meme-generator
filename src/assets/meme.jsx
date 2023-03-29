@@ -4,12 +4,24 @@ import React,{useState} from "react"
 
 function Meme(){
     
-    const [memeImage,setMemeImage]=useState('')
+    
 
-    function getRandomMeme(){
+
+    const [meme, setMeme]=useState({
+        topText:"",
+        bottomText:"",
+        randomImage:"https://static1.pocketlintimages.com/wordpress/wp-content/uploads/140427-apps-news-the-best-stupidest-and-most-famous-internet-memes-around-image1-lm1toysfy4.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5"
+    })
+
+    
+
+    function getRandomMemeImage(){
             const randomNumber= Math.floor(Math.random()* memeData.length)
-            const photo= memeData[randomNumber].photo
-            setMemeImage(photo)
+            const photos= memeData[randomNumber].photo
+            setMeme(prevMeme=>({
+                ...prevMeme,
+                randomImage:photos
+            }))
         }
         
     return(
@@ -27,10 +39,10 @@ function Meme(){
              placeholder="Bottom Text"
              />
 
-             <button onClick={getRandomMeme} className="meme__btn">Get a new meme image</button>
+             <button onClick={getRandomMemeImage} className="meme__btn">Get a new meme image</button>
         </div>
         <div className="meme__img">
-                   <img src={memeImage} alt="" />
+                   <img src={meme.randomImage} alt="" />
               </div>
         </main>
     )
