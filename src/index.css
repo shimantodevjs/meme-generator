@@ -53,22 +53,32 @@ main{
   flex-direction: column;
 }
 
-.meme__form{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 17px;
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
 }
 
-.meme__form input{
+.inputs{
+   width: 100%;
+   margin-bottom: 20px;  
+}
+
+.inputs>.input-txt-2{
+  float: right;
+}
+
+form input{
   padding: 10px;
   font-family: 'Karla', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   text-indent: 5px;
   border: 1px solid #d5d4d8;
   border-radius: 5px;
 }
 
-.meme__form input:focus{
+form input:focus{
   outline: none;
 }
 
@@ -86,6 +96,6 @@ main{
 }
 
 .meme__img img{
-  width: 100%;
-  margin-top: 20px;
+     margin-top: 20px;
+     width: 100%;
 }
