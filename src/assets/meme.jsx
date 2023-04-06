@@ -1,7 +1,6 @@
 // Реализуем компонент Meme в React, импортируем данные о мемах из файла "memeData".
-import memeData from "./memeData"
 
-import React,{useState} from "react"
+import React, { useState } from 'react';
 
 function Meme(){
     
@@ -12,6 +11,15 @@ function Meme(){
         bottomText:"",
         randomImage:"https://static1.pocketlintimages.com/wordpress/wp-content/uploads/140427-apps-news-the-best-stupidest-and-most-famous-internet-memes-around-image1-lm1toysfy4.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5"
     })
+
+    const[allMeme,setAllMeme]=useState([])
+
+    React.useEffect(()=>{
+    fetch("https://api.imgflip.com/get_memes")
+    .then(res=>res.json())
+    .then(data=>setAllMeme(data.data.memes))
+}, [])
+
 
     function handleChange(event){
            const{name,value}=event.target
@@ -26,11 +34,11 @@ function Meme(){
     function getRandomMemeImage(event){
             event.preventDefault()
 
-            const randomNumber= Math.floor(Math.random()* memeData.length)
-            const photos= memeData[randomNumber].photo
+            const randomNumber= Math.floor(Math.random()* allMeme.length)
+            const randomImage= allMeme[randomNumber].url
             setMeme(prevMeme=>({
                 ...prevMeme,
-                randomImage:photos
+                randomImage:randomImage
             }))
         }
         

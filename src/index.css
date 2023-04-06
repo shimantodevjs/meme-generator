@@ -99,11 +99,13 @@ form input:focus{
 
 .meme__img img{ 
     width: 100%; 
+    height: 350px;
 }
 
 .meme__img{
     margin-top: 20px;
     position: relative;
+    
 }
 
 .meme__text{
