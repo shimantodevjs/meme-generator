@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap');
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -44,6 +46,7 @@ body{
 
 .header>h2{
   color: #fff;
+  font-weight: 700;
 }
 
 /* meme.jsx */
@@ -83,7 +86,6 @@ form input:focus{
 }
 
 .meme__btn{
-  grid-column: 1/-1;
   padding: 0.75rem;
   color: #fff;
   background: var(--background-color);
@@ -95,7 +97,43 @@ form input:focus{
   font-family: 'Karla', sans-serif;
 }
 
-.meme__img img{
-     margin-top: 20px;
-     width: 100%;
+.meme__img img{ 
+    width: 100%; 
+}
+
+.meme__img{
+    margin-top: 20px;
+    position: relative;
+}
+
+.meme__text{
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0px 2px 0 #000,
+      2px 0px 0 #000,
+      0px -2px 0 #000,
+      -2px 0px 0 #000,
+      2px 2px 5px #000;
+}
+
+.top{
+    position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+}
+
+.bottom{
+    position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
 }
